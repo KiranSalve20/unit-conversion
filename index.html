@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unit Conversion Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>Unit Conversion Tool</h1>
+</header>
+
+<nav>
+  <button onclick="showTab('length')" class="active">Length</button>
+  <button onclick="showTab('weight')">Weight</button>
+  <button onclick="showTab('temperature')">Temperature</button>
+  <button onclick="showTab('area')">Area</button>
+  <button onclick="showTab('volume')">Volume</button>
+  <button onclick="showTab('base')">Number Base</button>
+  <button onclick="showTab('time')">Time</button>
+  <button onclick="showTab('trig')">Trigonometry</button>
+  <button onclick="showTab('log')">Logarithm</button>
+  <button onclick="showTab('exp')">Exponential</button>
+  <button onclick="showTab('si')">SI Unit</button>
+  <button onclick="showTab('percent')">Percentage</button>
+  <button onclick="showTab('ratio')">Ratio</button>
+  <button onclick="showTab('coordinates')">Coordinate</button>
+  <button onclick="showTab('mass')">Mass</button>
+  <button onclick="showTab('force')">Force</button>
+  <button onclick="showTab('pressure')">Pressure</button>
+  <button onclick="showTab('energy')">Energy</button>
+  <button onclick="showTab('power')">Power</button>
+  <button onclick="showTab('magnetism')">Magnetism</button>
+  <button onclick="showTab('torque')">Torque</button>
+  
+</nav>
+
+<main>
+
+  <!-- 🔁 21 sections below -->
+  <!-- We'll load each from reusable templates -->
+  <!-- To keep this message short, I've added only a few sections below as sample -->
+  <!-- The full 21-section HTML will continue in the next response -->
+
+ <section id="length" class="active">
+  <h2>Length Converter</h2>
+  <input type="number" id="lengthValue" placeholder="Enter value">
+
+  <label for="lengthFrom">From:</label>
+  <select id="lengthFrom">
+    <option value="mm">Millimeter</option>
+    <option value="cm">Centimeter</option>
+    <option value="dm">Decimeter</option>
+    <option value="m" selected>Meter</option>
+    <option value="dam">Decameter</option>
+    <option value="hm">Hectometer</option>
+    <option value="km">Kilometer</option>
+    <option value="in">Inch</option>
+    <option value="ft">Foot</option>
+    <option value="yd">Yard</option>
+    <option value="mi">Mile</option>
+  </select>
+
+  <label for="lengthTo">To:</label>
+  <select id="lengthTo">
+    <option value="mm">Millimeter</option>
+    <option value="cm">Centimeter</option>
+    <option value="dm">Decimeter</option>
+    <option value="m">Meter</option>
+    <option value="dam">Decameter</option>
+    <option value="hm">Hectometer</option>
+    <option value="km">Kilometer</option>
+    <option value="in">Inch</option>
+    <option value="ft">Foot</option>
+    <option value="yd">Yard</option>
+    <option value="mi">Mile</option>
+  </select>
+
+  <button onclick="convertLength()">Convert</button>
+  <div id="lengthResult"></div>
+</section>
+
+
+  <section id="weight">
+    <h2>Weight Converter</h2>
+    <input type="number" id="weightValue" placeholder="Enter value">
+    <select id="weightFrom">
+      <option value="kilograms">Kilograms</option>
+      <option value="pounds">Pounds</option>
+      <option value="grams">Grams</option>
+    </select>
+    <select id="weightTo">
+      <option value="kilograms">Kilograms</option>
+      <option value="pounds">Pounds</option>
+      <option value="grams">Grams</option>
+    </select>
+    <button onclick="convertWeight()">Convert</button>
+    <div id="weightResult"></div>
+  </section>
+
+  <section id="temperature">
+    <h2>Temperature Converter</h2>
+    <input type="number" id="tempValue" placeholder="Enter value">
+    <select id="tempFrom">
+      <option value="C">Celsius</option>
+      <option value="F">Fahrenheit</option>
+      <option value="K">Kelvin</option>
+    </select>
+    <select id="tempTo">
+      <option value="C">Celsius</option>
+      <option value="F">Fahrenheit</option>
+      <option value="K">Kelvin</option>
+    </select>
+    <button onclick="convertTemperature()">Convert</button>
+    <div id="tempResult"></div>
+  </section>
+<!-- Area -->
+<section id="area">
+  <h2>Area Converter</h2>
+  <input type="number" id="areaValue" placeholder="Enter value" />
+
+  <label for="areaFrom">From:</label>
+  <select id="areaFrom">
+    <option value="sqm" selected>Square Meters</option>
+    <option value="sqft">Square Feet</option>
+    <option value="acres">Acres</option>
+    <option value="sqin">Square Inches</option>
+    <option value="ha">Hectares</option>
+    <option value="sqmi">Square Miles</option>
+  </select>
+
+  <label for="areaTo">To:</label>
+  <select id="areaTo">
+    <option value="sqm">Square Meters</option>
+    <option value="sqft">Square Feet</option>
+    <option value="acres">Acres</option>
+    <option value="sqin">Square Inches</option>
+    <option value="ha">Hectares</option>
+    <option value="sqmi">Square Miles</option>
+  </select>
+
+  <button onclick="convertArea()">Convert</button>
+  <div id="areaResult"></div>
+</section>
+
+
+<!-- Volume -->
+<section id="volume">
+  <h2>Volume Converter</h2>
+  <input type="number" id="volumeValue" placeholder="Enter value" />
+
+  <label for="volumeFrom">From:</label>
+  <select id="volumeFrom">
+    <option value="liters" selected>Liters</option>
+    <option value="milliliters">Milliliters</option>
+    <option value="gallons">Gallons</option>
+    <option value="cubic_meters">Cubic Meters</option>
+  </select>
+
+  <label for="volumeTo">To:</label>
+  <select id="volumeTo">
+    <option value="liters">Liters</option>
+    <option value="milliliters">Milliliters</option>
+    <option value="gallons">Gallons</option>
+    <option value="cubic_meters">Cubic Meters</option>
+  </select>
+
+  <button onclick="convertVolume()">Convert</button>
+  <div id="volumeResult"></div>
+</section>
+
+<!-- Number Base -->
+<section id="base">
+  <h2>Number Base Converter</h2>
+  <input type="text" id="numInput" placeholder="Enter number">
+  <select id="numFrom">
+    <option value="2">Binary</option>
+    <option value="8">Octal</option>
+    <option value="10" selected>Decimal</option>
+    <option value="16">Hexadecimal</option>
+  </select>
+  <select id="numTo">
+    <option value="2">Binary</option>
+    <option value="8">Octal</option>
+    <option value="10">Decimal</option>
+    <option value="16">Hexadecimal</option>
+  </select>
+  <button onclick="convertNumberSystem()">Convert</button>
+  <div id="numberResult"></div>
+</section>
+
+<!-- Time -->
+<section id="time">
+  <h2>Time Converter</h2>
+  <input type="number" id="timeValue" placeholder="Enter value" />
+
+  <label for="timeFrom">From:</label>
+  <select id="timeFrom">
+    <option value="seconds" selected>Seconds</option>
+    <option value="minutes">Minutes</option>
+    <option value="hours">Hours</option>
+    <option value="days">Days</option>
+    <option value="weeks">Weeks</option>
+    <option value="years">Years</option>
+  </select>
+
+  <label for="timeTo">To:</label>
+  <select id="timeTo">
+    <option value="seconds">Seconds</option>
+    <option value="minutes">Minutes</option>
+    <option value="hours">Hours</option>
+    <option value="days">Days</option>
+    <option value="weeks">Weeks</option>
+    <option value="years">Years</option>
+  </select>
+
+  <button onclick="convertTime()">Convert</button>
+  <div id="timeResult"></div>
+</section>
+
+
+<!-- Trigonometry -->
+<section id="trig">
+  <h2>Trigonometric Converter</h2>
+  <input type="number" id="trigValue" placeholder="Enter angle">
+  <select id="trigFrom">
+    <option value="degrees">Degrees</option>
+    <option value="radians">Radians</option>
+    <option value="gradians">Gradians</option>
+  </select>
+  <select id="trigTo">
+    <option value="degrees">Degrees</option>
+    <option value="radians">Radians</option>
+    <option value="gradians">Gradians</option>
+  </select>
+  <button onclick="convertTrig()">Convert</button>
+  <div id="trigResult"></div>
+</section>
+
+<!-- Logarithm -->
+<section id="log">
+  <h2>Logarithmic Converter</h2>
+  <input type="number" id="logValue" placeholder="Enter x">
+  <input type="number" id="logBase" placeholder="Enter base a">
+  <button onclick="convertLog()">Compute logₐ(x)</button>
+  <div id="logResult"></div>
+</section>
+
+<!-- Exponential -->
+<section id="exp">
+  <h2>Exponential Calculator</h2>
+  <input type="number" id="expBase" placeholder="Base (a)">
+  <input type="number" id="expPower" placeholder="Exponent (x)">
+  <button onclick="convertExp()">Compute a^x</button>
+  <div id="expResult"></div>
+</section>
+
+<!-- SI Prefix -->
+<section id="si">
+  <h2>SI Prefix Converter</h2>
+  <input type="number" id="siValue" placeholder="Enter base value">
+  <select id="siFrom">
+    <option value="1">base</option>
+    <option value="1e3">kilo</option>
+    <option value="1e6">mega</option>
+    <option value="1e9">giga</option>
+    <option value="1e-3">milli</option>
+    <option value="1e-6">micro</option>
+  </select>
+  <select id="siTo">
+    <option value="1">base</option>
+    <option value="1e3">kilo</option>
+    <option value="1e6">mega</option>
+    <option value="1e9">giga</option>
+    <option value="1e-3">milli</option>
+    <option value="1e-6">micro</option>
+  </select>
+  <button onclick="convertSI()">Convert</button>
+  <div id="siResult"></div>
+</section>
+
+<!-- Percentage -->
+<section id="percent">
+  <h2>Percentage Converter</h2>
+  <label>Fraction (e.g. 3/4):</label>
+  <input type="text" id="fractionInput">
+  <button onclick="fractionToOthers()">Convert Fraction</button>
+  <div id="fractionOutput"></div>
+
+  <label>Decimal:</label>
+  <input type="number" id="decimalInput">
+  <button onclick="decimalToOthers()">Convert Decimal</button>
+  <div id="decimalOutput"></div>
+
+  <label>Percentage:</label>
+  <input type="number" id="percentInput">
+  <button onclick="percentToOthers()">Convert Percentage</button>
+  <div id="percentOutput"></div>
+</section>
+
+<!-- Ratio -->
+<section id="ratio">
+  <h2>Ratio Converter</h2>
+  
+  <label>Enter Ratio (e.g. 2:3):</label>
+  <input type="text" id="ratioInput" placeholder="e.g. 2:3" />
+
+  <div>
+    <input type="radio" id="partToPart" name="ratioType" value="partToPart" checked>
+    <label for="partToPart">Part-to-Part</label>
+
+    <input type="radio" id="partToWhole" name="ratioType" value="partToWhole">
+    <label for="partToWhole">Part-to-Whole</label>
+  </div>
+
+  <button onclick="convertRatio()">Convert</button>
+  <div id="ratioOutput"></div>
+</section>
+
+<!-- Coordinates -->
+<section id="coordinates">
+  <h2>Coordinate Converter</h2>
+
+  <h3>2D Polar to Cartesian</h3>
+  <label>r:</label><input type="number" id="polarR" />
+  <label>θ (degrees):</label><input type="number" id="polarTheta" />
+  <button onclick="polarToCartesian()">Convert</button>
+  <div id="cartesianResult2D"></div>
+
+  <h3>2D Cartesian to Polar</h3>
+  <label>x:</label><input type="number" id="cartesianX" />
+  <label>y:</label><input type="number" id="cartesianY" />
+  <button onclick="cartesianToPolar()">Convert</button>
+  <div id="polarResult2D"></div>
+
+  <hr />
+
+  <h3>3D Spherical to Cartesian</h3>
+  <label>ρ (radius):</label><input type="number" id="sphericalRho" />
+  <label>θ (azimuth, degrees):</label><input type="number" id="sphericalTheta" />
+  <label>φ (inclination, degrees):</label><input type="number" id="sphericalPhi" />
+  <button onclick="sphericalToCartesian()">Convert</button>
+  <div id="cartesianResult3D"></div>
+
+  <h3>3D Cartesian to Spherical</h3>
+  <label>x:</label><input type="number" id="rectX" />
+  <label>y:</label><input type="number" id="rectY" />
+  <label>z:</label><input type="number" id="rectZ" />
+  <button onclick="cartesianToSpherical()">Convert</button>
+  <div id="sphericalResult3D"></div>
+</section>
+
+
+<!-- Mass -->
+<section id="mass">
+  <h2>Mass Converter</h2>
+  <input type="number" id="massValue">
+  <select id="massFrom">
+    <option value="mg">mg</option>
+    <option value="g">g</option>
+    <option value="kg">kg</option>
+    <option value="lb">lb</option>
+  </select>
+  <select id="massTo">
+    <option value="mg">mg</option>
+    <option value="g">g</option>
+    <option value="kg">kg</option>
+    <option value="lb">lb</option>
+  </select>
+  <button onclick="convertMass()">Convert</button>
+  <div id="massResult"></div>
+</section>
+
+<!-- Force -->
+<section id="force">
+  <h2>Force Converter</h2>
+  <input type="number" id="forceValue">
+  <select id="forceFrom">
+    <option value="N">Newton</option>
+    <option value="dyne">Dyne</option>
+  </select>
+  <select id="forceTo">
+    <option value="N">Newton</option>
+    <option value="dyne">Dyne</option>
+  </select>
+  <button onclick="convertForce()">Convert</button>
+  <div id="forceResult"></div>
+</section>
+
+<!-- Pressure -->
+<section id="pressure">
+  <h2>Pressure Converter</h2>
+  <input type="number" id="pressureValue" placeholder="Enter value" />
+   <br>
+  <label for="pressureFrom">From:</label><br>
+  <select id="pressureFrom">
+    <option value="Pa" selected>Pascal (Pa)</option>
+    <option value="bar">Bar</option>
+    <option value="atm">Atmosphere (atm)</option>
+    <option value="mmHg">Millimeters of Mercury (mmHg)</option>
+    <option value="torr">Torr</option>
+  </select>
+
+  <label for="pressureTo">To:</label>
+  <select id="pressureTo">
+    <option value="Pa">Pascal (Pa)</option>
+    <option value="bar">Bar</option>
+    <option value="atm">Atmosphere (atm)</option>
+    <option value="mmHg">Millimeters of Mercury (mmHg)</option>
+    <option value="torr">Torr</option>
+  </select>
+
+  <button onclick="convertPressure()">Convert</button>
+  <div id="pressureResult"></div>
+</section>
+
+
+<!-- Energy -->
+<section id="energy">
+  <h2>Energy Converter</h2>
+  <input type="number" id="energyValue" placeholder="Enter value" />
+
+  <label for="energyFrom">From:</label>
+  <select id="energyFrom">
+    <option value="J" selected>Joule (J)</option>
+    <option value="kJ">Kilojoule (kJ)</option>
+    <option value="cal">Calorie (cal)</option>
+    <option value="kcal">Kilocalorie (kcal)</option>
+    <option value="eV">Electronvolt (eV)</option>
+  </select>
+
+  <label for="energyTo">To:</label>
+  <select id="energyTo">
+    <option value="J">Joule (J)</option>
+    <option value="kJ">Kilojoule (kJ)</option>
+    <option value="cal">Calorie (cal)</option>
+    <option value="kcal">Kilocalorie (kcal)</option>
+    <option value="eV">Electronvolt (eV)</option>
+  </select>
+
+  <button onclick="convertEnergy()">Convert</button>
+  <div id="energyResult"></div>
+</section>
+
+<!-- Power -->
+<section id="power">
+  <h2>Power Converter</h2>
+  <input type="number" id="powerValue">
+  <select id="powerFrom">
+    <option value="W">Watt</option>
+    <option value="hp">Horsepower</option>
+  </select>
+  <select id="powerTo">
+    <option value="W">Watt</option>
+    <option value="hp">Horsepower</option>
+  </select>
+  <button onclick="convertPower()">Convert</button>
+  <div id="powerResult"></div>
+</section>
+
+<!-- Magnetism -->
+<section id="magnetism">
+  <h2>Magnetic Field Converter</h2>
+  <input type="number" id="magnetismValue">
+  <select id="magnetismFrom">
+    <option value="tesla">Tesla</option>
+    <option value="gauss">Gauss</option>
+  </select>
+  <select id="magnetismTo">
+    <option value="tesla">Tesla</option>
+    <option value="gauss">Gauss</option>
+  </select>
+  <button onclick="convertMagnetism()">Convert</button>
+  <div id="magnetismResult"></div>
+</section>
+
+<!-- Torque -->
+<section id="torque">
+  <h2>Torque Converter</h2>
+  <input type="number" id="torqueValue" placeholder="Enter value" />
+
+  <label for="torqueFrom">From:</label>
+  <select id="torqueFrom">
+    <option value="Nm" selected>Newton-meter (Nm)</option>
+    <option value="Ncm">Newton-centimeter (N·cm)</option>
+    <option value="lbft">Pound-foot (lb·ft)</option>
+    <option value="dyne">Dyne</option>
+    <option value="dynecm">Dyne-centimeter (dyne·cm)</option>
+  </select>
+
+  <label for="torqueTo">To:</label>
+  <select id="torqueTo">
+    <option value="Nm">Newton-meter (Nm)</option>
+    <option value="Ncm">Newton-centimeter (N·cm)</option>
+    <option value="lbft">Pound-foot (lb·ft)</option>
+    <option value="dyne">Dyne</option>
+    <option value="dynecm">Dyne-centimeter (dyne·cm)</option>
+  </select>
+  <button onclick="convertTorque()">Convert</button>
+  <div id="torqueResult"></div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
